@@ -1,0 +1,31 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+ENV["FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD"] = "inkk-ifgk-alei-zuda"
+
+platform :ios do
+  desc "Push a new release build to the App Store"
+  lane :CI do
+    run_tests(project: "Jenkins-test-project.xcodeproj", scheme: "Jenkins-test-project")
+  end
+  lane :CD do
+    get_certificates
+    get_provisioning_profile
+    build_app(scheme: "Jenkins-test-project")
+    upload_to_app_store(skip_metadata: true, skip_screenshots: true)
+  end
+end

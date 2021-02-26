@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='Jenkins-test-projectTests.xctest' tests='4' failures='0'>
+  <testsuite name='Jenkins_test_projectUITests.Jenkins_test_projectUITests' tests='2' failures='0'>
+    <testcase classname='Jenkins_test_projectUITests.Jenkins_test_projectUITests' name='testExample' time='4.801'/>
+    <testcase classname='Jenkins_test_projectUITests.Jenkins_test_projectUITests' name='testLaunchPerformance' time='15.416'/>
+  </testsuite>
+  <testsuite name='Jenkins_test_projectTests.Jenkins_test_projectTests' tests='2' failures='0'>
+    <testcase classname='Jenkins_test_projectTests.Jenkins_test_projectTests' name='testExample' time='0.002'/>
+    <testcase classname='Jenkins_test_projectTests.Jenkins_test_projectTests' name='testPerformanceExample' time='0.263'/>
+  </testsuite>
+</testsuites>
