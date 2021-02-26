@@ -19,13 +19,16 @@ ENV["FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD"] = "inkk-ifgk-alei-zuda"
 
 platform :ios do
   desc "Push a new release build to the App Store"
+
   lane :CI do
     run_tests(project: "Jenkins-test-project.xcodeproj", scheme: "Jenkins-test-project")
   end
+
   lane :CD do
     get_certificates
     get_provisioning_profile
     build_app(scheme: "Jenkins-test-project")
-    upload_to_app_store(skip_metadata: true, skip_screenshots: true)
+    upload_to_app_store(skip_metadata: true, skip_screenshots: true, submit_for_review: true)
   end
+
 end
